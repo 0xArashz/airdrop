@@ -1,0 +1,91 @@
+.container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.75rem;
+}
+
+.container .connect {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.container .claim-btn {
+    z-index: 1;
+    width: min(85%, 570px);
+    padding: 0.7rem;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+}
+
+.container .claim-btn .loading-spinner {
+    width: 25px;
+    height: 25px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: black;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container .disabled-btn {
+    opacity: 0.5;
+}
+
+.container .note {
+    width: 100%;
+    padding: 0 1rem;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.container .note a {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 576px) {
+    .container .toast {
+        width: 450px;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container .claim-btn {
+        cursor: pointer;
+    }
+    .container .disabled-btn {
+        cursor: not-allowed;
+    }
+}
